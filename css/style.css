@@ -1,0 +1,322 @@
+@charset "utf-8";
+
+body
+{
+    background: lightgreen;
+    font-family: "Arial", sans-serif;
+
+    width: 600px;
+    margin: 0 auto;
+}
+
+div.container
+{
+    width: 560px;
+    background-color: white;
+
+    margin-top: -3px;
+    padding: 10px 0 20px 40px;
+}
+
+/****** H1s, H2s, H3s ******/
+h1, h2
+{
+    padding-bottom: 20px;
+}
+
+h1#welcome
+{
+    padding-top: 35px;
+}
+
+h3#clueNum
+{
+    margin-bottom: -20px;
+}
+
+
+/****************** Navigation ******************/
+div.container nav ul
+{
+    list-style: none;
+    margin-left: 320px;
+}
+
+div.container nav ul li
+{
+    display: inline-block;
+    padding: 0 12px;
+}
+
+div.container nav ul li button
+{
+    padding: 4px 8px;
+    font-size: 15px;
+}
+
+div.container nav ul li a:link
+{
+    color: black;
+}
+
+div.container nav ul li a:visited
+{
+    color: gray;
+}
+
+div.container nav ul li a:hover,
+div.container nav ul li a:active
+{
+    color: green;
+}
+
+
+/******************** Puzzles ********************/
+table.normal
+{
+    border: 3px solid black;
+    border-collapse: collapse;
+}
+
+table.normal tr td
+{
+    border: 1px solid black;
+    text-align: center;
+
+    font-size: 22px;
+    font-weight: bold;
+
+    width: 45px;
+    height: 45px;
+}
+
+/*** Correct and Incorrect Cells ***/
+table.normal tr td.correct
+ {
+     font-weight: normal;
+     color: green;
+ }
+
+table.normal tr td.incorrect
+{
+    font-weight: normal;
+    color: red;
+}
+
+table.normal tr td.incorrect a:link,
+table.normal tr td.incorrect a:visited,
+table.normal tr td.incorrect a:hover,
+table.normal tr td.incorrect a:active
+{
+    text-decoration: none;
+    color: red;
+
+    padding-top: 9px;
+}
+
+/****** 3x3 Lines ******/
+table.normal tr:nth-child(3),
+table.normal tr:nth-child(6)
+{
+    border-bottom: 2px solid black;
+}
+
+table.normal tr td:nth-child(3),
+table.normal tr td:nth-child(6)
+{
+    border-right: 2px solid black;
+}
+
+
+/****************** Notes Table ******************/
+table.noteTable
+{
+    border: none;
+    text-align: center;
+
+    margin: 0;
+    padding: 0;
+
+    width: 45px;
+    height: 45px;
+    pointer-events:none;
+}
+
+table.noteTable tr td
+{
+    border: none;
+    text-align: center;
+
+    font-size: 11px;
+    font-weight: normal;
+    color: green;
+
+    margin: 0;
+    padding: 0;
+
+    width: 0;
+    height: 0;
+    pointer-events: none;
+}
+
+table.noteTable tr td a:link,
+table.noteTable tr td a:visited,
+table.noteTable tr td a:hover,
+table.noteTable tr td a:active
+{
+    text-decoration: none;
+    color: green;
+}
+
+/****** No 3x3 Lines ******/
+table.noteTable tr td:nth-child(3),
+table.noteTable tr td:nth-child(6)
+{
+    border-right: none;
+    border-bottom: none;
+}
+
+
+/****************** Cell Links ******************/
+table.normal tr td:hover
+ {
+     background-color: #C2FFBA;
+     cursor: pointer;
+ }
+
+/*** Initial Values - no hover ***/
+table.normal tr td.start:hover
+{
+    background-color: transparent;
+    cursor: default;
+}
+
+
+/******************* Checkboxes *******************/
+div.content form p input#checkbox2,
+div.content form p input#checkbox3,
+div.content form p input#checkbox5,
+div.content form p input#checkbox6,
+div.content form p input#checkbox8,
+div.content form p input#checkbox9
+{
+    margin-left: 75px;
+}
+
+
+/******************** Content ********************/
+div.content
+{
+    padding-left: 40px;
+    padding-bottom: 60px;
+}
+
+div.content form p input#play
+{
+    padding: 5px 10px;
+
+    margin-left: 234px;
+    margin-bottom: 20px;
+}
+
+
+
+/*----------------------------------------------
+    Pop-up Box
+------------------------------------------------*/
+div#popupBody
+{
+    overflow: hidden;
+}
+
+div#popupBody div#popupBox
+{
+    width: 100%;
+    height: 100%;
+    opacity: .98;
+
+    top: 0;
+    left: 0;
+
+    display: none;
+    position: fixed;
+
+    background-color: #313131;
+    overflow: auto;
+}
+
+div#popupBody div#popupBox div#popupContent
+{
+    left: 50%;
+    top: 17%;
+
+    position: absolute;
+    margin-left: -202px;
+}
+
+
+/************* Close Button **************/
+div#popupBody div#popupBox div#popupContent form img#close
+{
+    right: -20px;
+    top: -22px;
+
+    position: absolute;
+    cursor: pointer;
+}
+
+/*************** Title ****************/
+div#popupBody div#popupBox div#popupContent h2
+{
+    background-color: lightgreen;
+    text-align: center;
+    font-size: 26px;
+
+    padding: 20px 35px;
+    border-radius: 10px 10px 10px 10px;
+}
+
+
+/**************** Form *****************/
+div#popupBody div#popupBox div#popupContent form
+{
+    max-width: 300px;
+    min-width: 250px;
+
+    padding: 10px 35px;
+    border: 4px solid lightgreen;
+    border-radius: 10px;
+
+    background-color: #ffffff;
+}
+
+/*************** Form - Checkboxes **************/
+div#popupBody div#popupBox div#popupContent form p input[type=checkbox]
+{
+    margin-left: 41px;
+    margin-bottom: 7px;
+}
+
+/*************** Form - Number Field **************/
+div#popupBody div#popupBox div#popupContent form p input[type=number]
+{
+    width: 45px;
+    margin-left: 5px;
+
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
+
+/*************** Form - Buttons **************/
+div#popupBody div#popupBox div#popupContent form p input[type=button]
+{
+    width: 170px;
+    font-size: 15px;
+
+    margin-left: 45px;
+    padding: 9px 0;
+
+    border-radius: 3px;
+    cursor: pointer;
+}
+
